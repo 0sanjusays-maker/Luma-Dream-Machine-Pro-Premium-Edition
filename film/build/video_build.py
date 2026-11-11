@@ -94,12 +94,12 @@ print("concat done")
 
 # ---------- text overlays ----------
 CAPTIONS = [
-    (5.30, 9.70,  ["Maa... bohot tez bukhaar hai...", "kaash aap yahan hoti..."]),
+    (5.30, 9.20,  ["Maa... bohot tez bukhaar hai...", "kaash aap yahan hoti..."]),
     (21.70, 25.10, ["Mummy... aap itni raat ko", "gaon se kaise aayi?"]),
-    (25.50, 30.10, ["Tujhe bukhaar ho, aur mujhe", "pata na chale? Chal, doodh pee le."]),
+    (25.50, 30.80, ["Tujhe bukhaar ho, aur mujhe", "pata na chale? Chal, doodh pee le."]),
     (34.80, 37.10, ["Hello? Papa?", "Mummy kahan hai?"]),
-    (38.00, 41.10, ["Kabir... beta jaldi gaon aa ja!"]),
-    (41.10, 45.10, ["Teri Mummy... raat 12 baje heart attack.", "Woh chali gayi beta."]),
+    (38.00, 40.90, ["Kabir... beta jaldi gaon aa ja!"]),
+    (40.90, 45.00, ["Teri Mummy... raat 12 baje heart attack.", "Woh chali gayi beta."]),
     (46.20, 49.10, ["Aakhri saans tak bas tera", "naam le rahi thi..."]),
     (49.10, 52.20, ["Mera Kabir... mujhe", "uske paas jaana hai..."]),
 ]

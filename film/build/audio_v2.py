@@ -1,7 +1,7 @@
 """Maa Ka Aanchal - audio v2.
 Design: less is more. Sparse felt piano + low string swell + real-ish foley.
 No fake bansuri, no tick-tock, no risers. Silence is a tool.
-Outputs: out/mix_v2.wav (music) and out/mix_v2_plain.wav (SFX+VO only)
+Outputs: out/mix_v3.wav (music) and out/mix_v3_plain.wav (SFX+VO only)
 """
 import numpy as np, wave, os
 
@@ -237,12 +237,12 @@ def norm_rms(x, target_db=-18.0):
     r = np.sqrt((x ** 2).mean()) + 1e-9
     return x * (10 ** (target_db / 20)) / r
 
-VO = [("audio/vo/k1.wav", 5.30, 0.0, -0.10),
-      ("audio/vo/k2.wav", 21.70, 0.0, 0.06),
-      ("audio/vo/m1.wav", 25.50, 1.5, 0.0),
-      ("audio/vo/k3.wav", 34.80, 0.0, 0.10),
-      ("audio/vo/p1.wav", 38.00, 2.0, 0.0),
-      ("audio/vo/p2.wav", 46.20, 2.0, 0.0)]
+VO = [("audio/vo2/k1.wav", 5.30, 0.0, -0.10),
+      ("audio/vo2/k2.wav", 21.70, 0.0, 0.06),
+      ("audio/vo2/m1.wav", 25.50, 1.5, 0.0),
+      ("audio/vo2/k3.wav", 34.80, 0.0, 0.10),
+      ("audio/vo2/p1.wav", 38.00, 2.0, 0.0),
+      ("audio/vo2/p2.wav", 46.20, 2.0, 0.0)]
 vo_mask = np.zeros(N)
 for path, at, g, pan in VO:
     if not os.path.exists(path): continue
@@ -303,5 +303,5 @@ def write(path, x):
           "| buzz", rms(33, 34), "| end", rms(56, 59))
 
 os.makedirs("out", exist_ok=True)
-write("out/mix_v2.wav", mix)
-write("out/mix_v2_plain.wav", plain)
+write("out/mix_v3.wav", mix)
+write("out/mix_v3_plain.wav", plain)
