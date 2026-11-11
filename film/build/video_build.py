@@ -6,10 +6,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 FF = "/home/user/.local/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v9.0.2"
 W, H, FPS = 1080, 1920, 30
-SH = "shots"
+SH = "shots_anime"
 REFS = "refs"
 OUT = "out"
-TMP = "tmp"
+TMP = "tmp_anime"
 os.makedirs(TMP, exist_ok=True); os.makedirs(OUT, exist_ok=True)
 FONT_B = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_R = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
@@ -28,24 +28,25 @@ SHOTS = [
     (f"{SH}/08A_hello_papa.png",  37.5,  2.5, "neutral",   "in"),
     (f"{SH}/08B_shock.png",       40.0,  6.0, "grey",      "in"),
     (f"{SH}/09A_head_turn.png",   46.0,  3.0, "grey",      "in"),
-    (f"{REFS}/glass_hero.png",    49.0,  6.5, "climax",    "in"),
+    (f"{SH}/09B_glass_hero.png",  49.0,  6.5, "climax",    "in"),
 ]
 # fallback agar koi shot abhi generate nahi hua
 for i, (img, *_rest) in enumerate(SHOTS):
     if not os.path.exists(img):
-        alt = {"08B_shock": "08A_hello_papa", "09A_head_turn": "08A_hello_papa"}.get(
-            os.path.basename(img).split(".")[0])
+        alt = {"05B_caress": "05A_cloth", "06_maa_leaves": "04_maa_reveal",
+               "07_morning_phone": "base_kabir", "09A_head_turn": "08B_shock",
+               "08A_hello_papa": "02_tear_phone"}.get(os.path.basename(img).split(".")[0])
         p = f"{SH}/{alt}.png" if alt else None
         print(f"!! missing {img} -> fallback {p}")
         SHOTS[i] = (p, *_rest)
 
 GRADE = {
-    "cold":      "eq=contrast=1.10:brightness=-0.015:saturation=0.82,colorbalance=bs=0.05:bm=0.04",
+    "cold":      "eq=contrast=1.06:brightness=-0.01:saturation=0.92,colorbalance=bs=0.04:bm=0.03",
     "warmstrong":"eq=contrast=1.00:brightness=0.02:saturation=1.10,colorbalance=rs=0.08:rm=0.06:bs=-0.05",
     "warm":      "eq=contrast=1.02:brightness=0.01:saturation=1.06,colorbalance=rs=0.06:rm=0.05:bs=-0.04",
-    "dark":      "eq=contrast=1.20:brightness=-0.07:saturation=0.72,colorbalance=bs=0.05",
+    "dark":      "eq=contrast=1.12:brightness=-0.05:saturation=0.85,colorbalance=bs=0.04",
     "neutral":   "eq=contrast=0.98:brightness=0.01:saturation=0.95",
-    "grey":      "eq=contrast=1.06:brightness=-0.01:saturation=0.60",
+    "grey":      "eq=contrast=1.04:brightness=-0.01:saturation=0.80",
     "climax":    "eq=contrast=1.12:brightness=-0.02:saturation=0.85,colorbalance=bs=0.05:rm=0.02",
 }
 
@@ -164,7 +165,7 @@ inputs = ["-i", concat]
 for p, _, _ in overlays:
     inputs += ["-i", p]
 
-fc = "[0:v]noise=alls=4:allf=t,vignette=PI/5,fade=t=out:st=54.9:d=1.1,setsar=1[base]"
+fc = "[0:v]noise=alls=2:allf=t,vignette=PI/5,fade=t=out:st=54.9:d=1.1,setsar=1[base]"
 prev = "base"
 for i, (p, a, b) in enumerate(overlays, start=1):
     fc += f";[{prev}][{i}:v]overlay=0:0:enable='between(t,{a},{b})'[v{i}]"
